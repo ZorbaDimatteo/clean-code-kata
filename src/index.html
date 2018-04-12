@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SystemJS</title>
+  <script src="lib/system.js"></script>
+  <script src="lib/typescript.js"></script>
+  
+  <script src="lib/jquery-3.2.1.js"></script>
+  <script>
+    System.config({
+      transpiler: 'typescript',
+      packages: {
+        '.': {
+        defaultExtension: 'ts',
+        }
+      }
+    });
+    System
+      .import('main.ts')
+      .then(null, console.error.bind(console));
+  </script>
+</head>
+<body>
+</body>
+</html>
+
+<!-- http://david-barreto.com/how-to-use-typescript-with-systemjs/ -->
